@@ -1,8 +1,8 @@
 class DecryptPdf < Formula
   desc "Decrypt password-protected PDFs using a cascading strategy (qpdf, mutool, ghostscript)"
-  homepage "https://github.com/Sdaas/pdf-decrypt"
-  url "https://github.com/Sdaas/pdf-decrypt/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "82b87ee177b17e785c2e6933caec0895fe9cae4b2b58ed7c99a591d7745c3edd"
+  homepage "https://github.com/Sdaas/decrypt-pdf"
+  url "https://github.com/Sdaas/decrypt-pdf/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "dc71376f4e2a81bed4fa989eedfefd3f6b89351a24a7cfa1c40e7a00551d9b07"
   license "MIT"
 
   depends_on "qpdf"

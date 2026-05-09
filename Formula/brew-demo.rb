@@ -3,7 +3,7 @@ class BrewDemo < Formula
 
   desc "Demo CLI apps: REST server, Python client, and shell client"
   homepage "https://github.com/Sdaas/hello-brew"
-  url "https://github.com/Sdaas/hello-brew/archive/refs/tags/v__VERSION__.tar.gz"
+  url "https://github.com/Sdaas/hello-brew/archive/refs/tags/v0.0.1.tar.gz"
   sha256 "__SHA256__"
   license "MIT"
 
@@ -111,7 +111,7 @@ class BrewDemo < Formula
     bin.install "apps/shell-client/bin/demo-shell-client"
 
     # Stamp the version into the shell client
-    inreplace bin/"demo-shell-client", "__VERSION__", version
+    inreplace bin/"demo-shell-client", "0.0.1", version
 
     # Install a default config file that users can edit to change the port
     # write_unless_exists preserves user edits across brew upgrades

@@ -113,9 +113,10 @@ class BrewDemo < Formula
     # Stamp the version into the shell client
     inreplace bin/"demo-shell-client", "0.0.1", version
 
-    # Install a default config file that users can edit to change the port
-    # write_unless_exists preserves user edits across brew upgrades
-    (etc/"demo-server.conf").write_unless_exists <<~EOS
+    # Install a default config file that users can edit to change the port.
+    # Only write if it doesn't already exist, to preserve user edits across upgrades.
+    conf = etc/"demo-server.conf"
+    conf.write <<~EOS unless conf.exist?
       # demo-server configuration
       # Edit this file and run: brew services restart brew-demo
       PORT=8100

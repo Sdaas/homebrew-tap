@@ -1,0 +1,30 @@
+name: Brew Test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  brew-test:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap this repo
+        run: brew tap sdaas/tap https://github.com/Sdaas/homebrew-tap
+
+      - name: Install brew-demo
+        run: brew install brew-demo
+
+      - name: Run brew test
+        run: brew test brew-demo
+
+      - name: Smoke test binaries
+        run: |
+          demo-server --version
+          demo-python-client --version
+          demo-shell-client --version
